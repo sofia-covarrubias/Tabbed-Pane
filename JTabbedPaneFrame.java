@@ -1,9 +1,11 @@
-import javax.swing.JFrame;
-import javax.swing.JTabbedPane;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-import javax.swing.JPanel;
+// ANYTIME WE USE A CONSTRUCTOR, IMPORT THE CLASS
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.SwingConstants;
+import java.awt.BorderLayout;
 
 public class JTabbedPaneFrame extends JFrame // child class
 {
@@ -27,11 +29,14 @@ public class JTabbedPaneFrame extends JFrame // child class
     tabPane.addTab ("Tab Two", null, panel2, "SecondPanel");
 
     // add third tab
-    JLabel label3 = new JLabel ("This is the big area called panel three", SwingConstants.CENTER);
+    JLabel label3 = new JLabel ("These are fabulous buttons", SwingConstants.CENTER);
     JPanel panel3 = new JPanel ();
+    panel3.setLayout(new BorderLayout());
     panel3.add(label3);
-    panel3.add(new JButton("North"));
-    panel3.add(new JButton("South"));
+    panel3.add(new JButton("North"), BorderLayout.NORTH);
+    panel3.add(new JButton("East"), BorderLayout.EAST);
+    panel3.add(new JButton("West"), BorderLayout.WEST);
+    panel3.add(new JButton("South"), BorderLayout.SOUTH);
     tabPane.addTab ("Tab Three", null, panel3, "ThirdPanel"); // keep the add below all the tab's formatting
 
     // keep this at the bottom
